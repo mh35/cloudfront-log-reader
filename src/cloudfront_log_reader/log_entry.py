@@ -24,7 +24,7 @@ class CloudFrontLogEntry:
     user_agent: Optional[str]
     query_string: Optional[str]
     cookie: Optional[str]
-    edgee_result_type: str
+    edge_result_type: str
     request_id: str
     request_host: str
     request_protocol: str
