@@ -218,16 +218,16 @@ class _CloudFrontLogIterator:
         if edge_detailed_result_type is None:
             edge_detailed_result_type = edge_result_type
         content_type = fields_data.get("sc-content-type")
-        if content_type is None or content_type == "-":
-            content_type = "application/octet-stream"
+        if content_type == "-":
+            content_type = None
         content_length_s = fields_data.get("sc-content-len")
         if content_length_s is None or content_length_s == "-":
-            content_length = 0
+            content_length: Optional[int] = None
         else:
             try:
                 content_length = int(content_length_s)
             except ValueError:
-                content_length = 0
+                content_length = None
         range_start_s = fields_data.get("sc-range-start")
         if range_start_s is None or range_start_s == "-":
             range_start: Optional[int] = None

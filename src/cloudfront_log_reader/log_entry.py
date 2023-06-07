@@ -40,7 +40,7 @@ class CloudFrontLogEntry:
     client_port: int
     time_to_first_bytes: Decimal
     edge_detailed_result_type: str
-    content_type: str
-    content_length: int
+    content_type: Optional[str]
+    content_length: Optional[int]
     range_start: Optional[int]
     range_end: Optional[int]
